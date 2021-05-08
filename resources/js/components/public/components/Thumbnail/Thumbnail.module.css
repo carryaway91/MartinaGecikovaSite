@@ -1,0 +1,6 @@
+.Header::before {
+    content: '';
+    width: 80px;
+    height: 3px;
+    background-color: red
+}
