@@ -21,7 +21,7 @@ Route::get('/login', function() {
 Route::view('/register', 'auth.auth');
 
 
-Route::view('/admin/{path?}', 'admin.dashboard')->where('path', '.*')->middleware('auth');
+Route::view('/admin/{path?}', 'Admin.dashboard')->where('path', '.*')->middleware('auth');
 Route::view('/{path?}', 'public.home')->where('path', '.*');
 
 
