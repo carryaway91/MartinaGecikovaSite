@@ -5110,7 +5110,7 @@ var Home = function Home() {
     className: "flex mobile:block w-full mt-2",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
       className: "relative w-4/5 mobile:flex mobile:flex-col-reverse mobile:justify-center mobile:items-center mobile:w-full",
-      children: [data && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      children: ["asssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss", data && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
         className: "mobile:flex mobile:flex-col absolute mobile:static z-10 front-text mobile:right-0 mobile:top-0 mobile:mt-5",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h1", {
           className: " text-white flex opacity-0 mobile:justify-center",
@@ -5547,7 +5547,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 
 var apiClient = axios__WEBPACK_IMPORTED_MODULE_0___default().create({
-  baseURL: 'http://localhost:8000',
+  baseURL: 'http://martina-gecikova.herokuapp.com',
   withCredentials: true
 });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (apiClient);

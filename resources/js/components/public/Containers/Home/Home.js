@@ -72,7 +72,7 @@ const Home = () => {
         <div className="flex mobile:block w-full mt-2">
 
             <div className="relative w-4/5 mobile:flex mobile:flex-col-reverse mobile:justify-center mobile:items-center mobile:w-full">
-
+asssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
                 {
 
                     data && (
