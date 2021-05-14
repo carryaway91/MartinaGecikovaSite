@@ -15,18 +15,47 @@ class AboutMeController extends Controller
         return new AboutMeResource(AboutMe::first());
     }
 
+    public function create($request) {
+        $request->validate([
+            'about' => 'required',
+            'aboutPhoto' => 'required|file|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+            $imageName = time() . '-' . $request->aboutPhoto->extension();
+            $request->aboutPhoto->move(base_path('\storage\app\public'), $imageName);
+            $path = Storage::url($imageName);
+
+            AboutMe::create([
+                'about' => $request->about,
+                'aboutPhoto' => $path
+            ]);
+
+            return response([
+                'status' => 'success',
+                'message' => 'About info has been created!'
+            ], 201);
+    }
+
+
     public function update( Request $request) {
+
+        $about = AboutMe::first();
+
+        if(empty($about)) {
+            $this->create($request);
+        }
+
         $this->validateData();
 
         
-        if(!empty($request->photo)) {
-            $imageName = time() . '-' . $request->photo->extension();
-            $request->photo->move(base_path('\storage\app\public'), $imageName);
+        if(!empty($request->aboutPhoto)) {
+            $imageName = time() . '-' . $request->aboutPhoto->extension();
+            $request->aboutPhoto->move(base_path('\storage\app\public'), $imageName);
             $path = Storage::url($imageName);
 
-            AboutMe::first()->first()->update([
+            AboutMe::first()->update([
                 'about' => $request->about,
-                'photo' => $path
+                'aboutPhoto' => $path
             ]);
         } else {
             AboutMe::first()->update([
@@ -39,7 +68,7 @@ class AboutMeController extends Controller
     private function validateData() {
         request()->validate([
             'about' => 'required',
-            'photo' => ''
+            'aboutPhoto' => ''
         ]);
     }
 }

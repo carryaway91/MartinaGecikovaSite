@@ -33,7 +33,7 @@ const Login = () => {
 
     return (
         <div className="bg-gray-600 h-screen flex align-middle">
-            <form className="w-1/4 m-auto bg-white" onSubmit={e => e.preventDefault()}>
+            <form className="w-1/4 m-auto bg-white mobile:w-4/5" onSubmit={e => e.preventDefault()}>
             <div className="bg-gray-800 px-6 py-6 flex justify-center mb-4"><h2 className="text-white">ADMIN LOGIN</h2></div>
             <div className="px-8 pb-4">
                 <Input inputType="input" type="email" name="email" placeholder="Email" changeVal={handleChangeVal} err={errors && errors.email}/>

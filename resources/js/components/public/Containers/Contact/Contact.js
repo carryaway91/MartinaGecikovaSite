@@ -43,12 +43,12 @@ const Contact = () => {
         <div className="w-full">
             <h2 className="text-white flex justify-center text-5xl anime opacity-0">Feel free to contact me!</h2>
             <div className="bg-white mt-4 anime opacity-0" style={{ height: '1px'}}></div>
-            <div className="w-3/4 flex justify-center mt-10">
+            <div className="w-3/4 mobile:w-full flex justify-center mobile:flex-col mt-10">
                 
                 {
                     !sent ? (
 
-                        <form className="w-3/4 anime opacity-0" onSubmit={e => e.preventDefault()}>
+                <form className="w-3/4 mobile:w-full anime opacity-0" onSubmit={e => e.preventDefault()}>
                     <div className="mb-3">
                         <Input inputType="input" type="email" name="email" placeholder="Your Email" changeVal={e => handleChangeVal(e)} err={errors && errors.email} />
                     </div>
@@ -63,7 +63,7 @@ const Contact = () => {
                             <p className="text-3xl text-white">Thank you for your feedback!</p>
                         )
                 }
-                <ul className="text-white flex flex-col ml-24 anime opacity-0">
+                <ul className="text-white flex flex-col ml-24 mobile:ml-0 anime mobile:mt-10 opacity-0">
                     <li className="flex mb-8">
                         <span className="mr-10">
                         <svg width="30px" height="30px" viewBox="0 0 97.713 97.713" fill="white">

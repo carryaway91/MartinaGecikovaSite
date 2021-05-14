@@ -39,19 +39,19 @@ const MainNav = () => {
                 show && (
                     <ul className="flex flex-col mt-12 mobile:mt-0 mobile:text-center">
                         <li className="pb-8">
-                            <NavLink className="text-gray-300" exact to='/admin' activeStyle={{ fontWeight: 'bold' }}>Dashboard</NavLink>
+                            <NavLink onClick={() => window.innerWidth < 950 ? setShow(false) : null} className="text-gray-300" exact to='/admin' activeStyle={{ fontWeight: 'bold' }}>Dashboard</NavLink>
                         </li>
                         <li className="pb-8">
-                            <NavLink className="text-gray-300" exact to="/admin/add-painting" activeStyle={{ fontWeight: 'bold' }}>Add painting</NavLink>
+                            <NavLink onClick={() => window.innerWidth < 950 ? setShow(false) : null} className="text-gray-300" exact to="/admin/add-painting" activeStyle={{ fontWeight: 'bold' }}>Add painting</NavLink>
                         </li>
                         <li className="pb-8">
-                            <NavLink className="text-gray-300" exact to="/admin/add-gallery" activeStyle={{ fontWeight: 'bold' }}>Add gallery</NavLink>
+                            <NavLink onClick={() => window.innerWidth < 950 ? setShow(false) : null} className="text-gray-300" exact to="/admin/add-gallery" activeStyle={{ fontWeight: 'bold' }}>Add gallery</NavLink>
                         </li>
                         <li className="pb-8">
-                            <NavLink className="text-gray-300" exact to='/admin/about' activeStyle={{ fontWeight: 'bold' }}>Modify Intro page and about info</NavLink>
+                            <NavLink onClick={() => window.innerWidth < 950 ? setShow(false) : null} className="text-gray-300" exact to='/admin/about' activeStyle={{ fontWeight: 'bold' }}>Modify Intro page and about info</NavLink>
                         </li>
                         <li className="pb-8">
-                            <NavLink className="text-gray-300" exact to='/admin/messages' activeStyle={{ fontWeight: 'bold' }}>Messages</NavLink>
+                            <NavLink onClick={() => window.innerWidth < 950 ? setShow(false) : null} className="text-gray-300" exact to='/admin/messages' activeStyle={{ fontWeight: 'bold' }}>Messages</NavLink>
                         </li>
                         <li className="pb-8">
                             <button  className="text-gray-300" type="submit" value="Logout" onClick={handleLogout}>Logout</button>

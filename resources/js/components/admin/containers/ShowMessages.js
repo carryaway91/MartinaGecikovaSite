@@ -23,9 +23,9 @@ const ShowMessages = () => {
             <ul>
                 {
                     msgs && msgs.map(m => (
-                        <li className="flex w-3/4 justify-between mb-5">
-                            <span>{m.email}</span>
-                            <span>{m.message}</span>
+                        <li className="w-3/4 mb-5">
+                            <p className="text-gray-900 font-bold">{ m.email }</p>
+                            <p className="break-all mb-2">{ m.message }</p>
                             <hr />
                         </li>
                     ))

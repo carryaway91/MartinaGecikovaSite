@@ -16,7 +16,7 @@ class AboutMeResource extends JsonResource
     {
         return [
             'about' => $this->about,
-            'photo' => $this->photo
+            'photo' => $this->aboutPhoto
         ];
     }
 }

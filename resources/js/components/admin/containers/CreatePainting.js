@@ -94,7 +94,7 @@ const CreatePainting = props => {
                 { 
                     imageData.image ? <img src={imageData.image} style={{ width: '30%' }} className="block ml-16 mobile:ml-0" /> 
                         : 
-                        <div style={{ width: '40%', height: '300px'}} className="bg-gray-300 flex justify-center items-center ml-16 mobile:ml-0">Preview</div>
+                        <div style={{height: '300px'}} className="bg-gray-300 flex w-5/12 mobile:w-full justify-center items-center ml-16 mobile:ml-0">Preview</div>
                 }
                 </div>
 

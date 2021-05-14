@@ -7,6 +7,7 @@ const About = () => {
     
     const [aboutInfo, setAboutInfo] = useState()
     const [text, setText] = useState()
+    const [size, setSize] = useState('275px')
 
     const ukaz = useRef()
 
@@ -22,7 +23,18 @@ const About = () => {
         }, [callback, dependencies]);
       };
     
-    
+    useEffect(() => {
+        const setWidth = () => {
+            if(window.innerWidth < 335) {
+                setSize('100%')
+            } else {
+                setSize('275px')
+            }
+        }
+
+        setWidth()
+        window.addEventListener('resize', setWidth)
+    },[])
 
 
 
@@ -51,10 +63,10 @@ const About = () => {
                 <div className="flex w-full text-white" ref={ukaz}>
             {
                         aboutInfo && (
-                            <div className="flex w-full justify-between">
+                            <div className="flex w-full justify-between mobile:flex-col-reverse">
                             <p className="odstavec break-all">{parse(aboutInfo.about)}</p>
 
-                        <img src={aboutInfo.photo} style={{ width: '21vw' }} className="self-start ml-12 odstavec"/>
+                        <img src={aboutInfo.photo} style={{ maxWidth: size }} className="self-start ml-12 mobile:ml-0 mobile:mb-5 odstavec"/>
                             </div>
                         )
                     }

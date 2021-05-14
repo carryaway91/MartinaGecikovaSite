@@ -31,4 +31,13 @@
         cursor: pointer;
         opacity: 0
     }
+
+    .front-pic-position {
+        right: -15%
+    }
+
+    .front-text {
+        left: 15%; 
+        top: 5%
+    }
 }

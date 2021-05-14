@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useContext } from 'react'
+import React, { useState, useEffect, useRef, useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { LayoutContext } from '../../../../context/LayoutContext'
 import { TweenMax, Power3 } from 'gsap'
@@ -7,10 +7,24 @@ import styles from './Thumbnail.module.css'
 
 
 const Thumbnail = props => {
-
     const { showOverlay } = useContext(LayoutContext)
-
+    const [imgSize, setImgSize] = useState('316px')
     const thumb = useRef(null)
+
+    useEffect(() => {
+        
+        const setSize = () => {
+            if(window.innerWidth < 410) {
+                setImgSize('200px')
+            } else {
+                setImgSize('316px')
+            }
+        }
+        setSize()
+        window.addEventListener('resize', setSize)
+    },[])
+
+
 
     useEffect(() => {
         TweenMax.fromTo(
@@ -29,6 +43,7 @@ const Thumbnail = props => {
     }, [props.bg])
 
 
+
     return (
         <li className="p-5 opacity-0 relative" ref={thumb}>
             <Link to={  props.galleryThumb ? { pathname: `/gallery/${props.galleryID}` } : { pathname: `/gallery/${props.galleryID}/${props.picID}`, state: { modal: true} }}>
@@ -36,8 +51,8 @@ const Thumbnail = props => {
                     <div
                     onClick={ props.galleryThumb ? null : () => showOverlay()}
                         style={{
-                            width: 316,
-                            height: 316,
+                            width: imgSize,
+                            height: imgSize,
                             backgroundImage: `url(${props.bg})`,
                             backgroundPosition: 'center',
                             backgroundSize: 'cover'
